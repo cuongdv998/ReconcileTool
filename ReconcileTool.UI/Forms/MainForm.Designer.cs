@@ -57,6 +57,8 @@ partial class MainForm
     private System.Windows.Forms.Panel pnlMenu;
     private System.Windows.Forms.Button btnMenuCauHinh;
     private System.Windows.Forms.Button btnMenuBoiThuong;
+    private System.Windows.Forms.Button btnMenuBoiThuongV2;
+    private System.Windows.Forms.Button btnMenuGiamDinh;
     private System.Windows.Forms.Button btnMenuThanhToan;
 
     // Content panel
@@ -112,9 +114,11 @@ partial class MainForm
         btnUpdate = new Button();
         lblVersion = new Label();
         pnlMenu = new Panel();
-        btnMenuCauHinh   = new Button();
-        btnMenuBoiThuong = new Button();
-        btnMenuThanhToan = new Button();
+        btnMenuCauHinh      = new Button();
+        btnMenuBoiThuong    = new Button();
+        btnMenuBoiThuongV2  = new Button();
+        btnMenuGiamDinh     = new Button();
+        btnMenuThanhToan    = new Button();
         pnlContent = new Panel();
         lblPlaceholder = new Label();
         label1 = new Label();
@@ -130,7 +134,7 @@ partial class MainForm
         // 
         // pnlHeader
         // 
-        pnlHeader.BackColor = Color.FromArgb(24, 90, 157);
+        pnlHeader.BackColor = Color.FromArgb(220, 95, 20);
         pnlHeader.Controls.Add(lblTitle);
         pnlHeader.Dock = DockStyle.Top;
         pnlHeader.Location = new Point(0, 0);
@@ -197,7 +201,7 @@ partial class MainForm
         grpBSH.Controls.Add(lblBshStatus);
         grpBSH.Dock     = DockStyle.Fill;
         grpBSH.Font     = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-        grpBSH.ForeColor = Color.FromArgb(24, 90, 157);
+        grpBSH.ForeColor = Color.FromArgb(220, 95, 20);
         grpBSH.Margin   = new Padding(0, 0, 6, 0);
         grpBSH.Name     = "grpBSH";
         grpBSH.TabIndex = 0;
@@ -310,12 +314,12 @@ partial class MainForm
         // 
         // btnTestBSH
         // 
-        btnTestBSH.BackColor = Color.FromArgb(235, 245, 255);
+        btnTestBSH.BackColor = Color.FromArgb(255, 237, 213);
         btnTestBSH.Cursor = Cursors.Hand;
-        btnTestBSH.FlatAppearance.BorderColor = Color.FromArgb(24, 90, 157);
+        btnTestBSH.FlatAppearance.BorderColor = Color.FromArgb(220, 95, 20);
         btnTestBSH.FlatStyle = FlatStyle.Flat;
         btnTestBSH.Font = new Font("Segoe UI", 9F);
-        btnTestBSH.ForeColor = Color.FromArgb(24, 90, 157);
+        btnTestBSH.ForeColor = Color.FromArgb(220, 95, 20);
         btnTestBSH.Location = new Point(12, 80);
         btnTestBSH.Name = "btnTestBSH";
         btnTestBSH.Size = new Size(80, 28);
@@ -351,7 +355,7 @@ partial class MainForm
         grpMyBSH.Controls.Add(lblMyBshStatus);
         grpMyBSH.Dock     = DockStyle.Fill;
         grpMyBSH.Font     = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-        grpMyBSH.ForeColor = Color.FromArgb(24, 90, 157);
+        grpMyBSH.ForeColor = Color.FromArgb(220, 95, 20);
         grpMyBSH.Margin   = new Padding(6, 0, 6, 0);
         grpMyBSH.Name     = "grpMyBSH";
         grpMyBSH.TabIndex = 1;
@@ -474,12 +478,12 @@ partial class MainForm
         // 
         // btnTestMyBSH
         // 
-        btnTestMyBSH.BackColor = Color.FromArgb(235, 245, 255);
+        btnTestMyBSH.BackColor = Color.FromArgb(255, 237, 213);
         btnTestMyBSH.Cursor = Cursors.Hand;
-        btnTestMyBSH.FlatAppearance.BorderColor = Color.FromArgb(24, 90, 157);
+        btnTestMyBSH.FlatAppearance.BorderColor = Color.FromArgb(220, 95, 20);
         btnTestMyBSH.FlatStyle = FlatStyle.Flat;
         btnTestMyBSH.Font = new Font("Segoe UI", 9F);
-        btnTestMyBSH.ForeColor = Color.FromArgb(24, 90, 157);
+        btnTestMyBSH.ForeColor = Color.FromArgb(220, 95, 20);
         btnTestMyBSH.Location = new Point(12, 80);
         btnTestMyBSH.Name = "btnTestMyBSH";
         btnTestMyBSH.Size = new Size(80, 28);
@@ -507,7 +511,7 @@ partial class MainForm
         grpApiConfig.Controls.Add(txtApiPassword);
         grpApiConfig.Dock     = DockStyle.Fill;
         grpApiConfig.Font     = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-        grpApiConfig.ForeColor = Color.FromArgb(24, 90, 157);
+        grpApiConfig.ForeColor = Color.FromArgb(220, 95, 20);
         grpApiConfig.Margin   = new Padding(6, 0, 0, 0);
         grpApiConfig.Name     = "grpApiConfig";
         grpApiConfig.TabIndex = 2;
@@ -558,7 +562,7 @@ partial class MainForm
         // 
         // btnSaveConfig
         // 
-        btnSaveConfig.BackColor = Color.FromArgb(24, 90, 157);
+        btnSaveConfig.BackColor = Color.FromArgb(220, 95, 20);
         btnSaveConfig.Cursor = Cursors.Hand;
         btnSaveConfig.FlatAppearance.BorderSize = 0;
         btnSaveConfig.FlatStyle = FlatStyle.Flat;
@@ -603,6 +607,8 @@ partial class MainForm
         pnlMenu.BackColor = Color.White;
         pnlMenu.Controls.Add(btnMenuCauHinh);
         pnlMenu.Controls.Add(btnMenuBoiThuong);
+        pnlMenu.Controls.Add(btnMenuBoiThuongV2);
+        pnlMenu.Controls.Add(btnMenuGiamDinh);
         pnlMenu.Controls.Add(btnMenuThanhToan);
         pnlMenu.Dock     = DockStyle.Top;
         pnlMenu.Name     = "pnlMenu";
@@ -613,7 +619,7 @@ partial class MainForm
         //
         btnMenuCauHinh.BackColor = Color.White;
         btnMenuCauHinh.Cursor    = Cursors.Hand;
-        btnMenuCauHinh.FlatAppearance.BorderColor = Color.FromArgb(24, 90, 157);
+        btnMenuCauHinh.FlatAppearance.BorderColor = Color.FromArgb(220, 95, 20);
         btnMenuCauHinh.FlatAppearance.BorderSize  = 0;
         btnMenuCauHinh.FlatStyle  = FlatStyle.Flat;
         btnMenuCauHinh.Font       = new Font("Segoe UI", 10F);
@@ -630,7 +636,7 @@ partial class MainForm
         //
         btnMenuBoiThuong.BackColor = Color.White;
         btnMenuBoiThuong.Cursor    = Cursors.Hand;
-        btnMenuBoiThuong.FlatAppearance.BorderColor = Color.FromArgb(24, 90, 157);
+        btnMenuBoiThuong.FlatAppearance.BorderColor = Color.FromArgb(220, 95, 20);
         btnMenuBoiThuong.FlatAppearance.BorderSize  = 0;
         btnMenuBoiThuong.FlatStyle  = FlatStyle.Flat;
         btnMenuBoiThuong.Font       = new Font("Segoe UI", 10F);
@@ -643,25 +649,55 @@ partial class MainForm
         btnMenuBoiThuong.UseVisualStyleBackColor = false;
         btnMenuBoiThuong.Click += btnMenuBoiThuong_Click;
         //
-        // btnMenuThanhToan
+        // btnMenuBoiThuongV2
         //
+        btnMenuBoiThuongV2.BackColor = Color.White;
+        btnMenuBoiThuongV2.Cursor    = Cursors.Hand;
+        btnMenuBoiThuongV2.FlatAppearance.BorderSize  = 0;
+        btnMenuBoiThuongV2.FlatStyle  = FlatStyle.Flat;
+        btnMenuBoiThuongV2.Font       = new Font("Segoe UI", 10F);
+        btnMenuBoiThuongV2.ForeColor  = Color.FromArgb(100, 110, 125);
+        btnMenuBoiThuongV2.Location   = new Point(360, 0);
+        btnMenuBoiThuongV2.Name       = "btnMenuBoiThuongV2";
+        btnMenuBoiThuongV2.Size       = new Size(200, 44);
+        btnMenuBoiThuongV2.TabIndex   = 2;
+        btnMenuBoiThuongV2.Text       = "Bồi thường v2";
+        btnMenuBoiThuongV2.UseVisualStyleBackColor = false;
+        btnMenuBoiThuongV2.Click += btnMenuBoiThuongV2_Click;
+        //
+        // btnMenuGiamDinh
+        //
+        btnMenuGiamDinh.BackColor = Color.White;
+        btnMenuGiamDinh.Cursor    = Cursors.Hand;
+        btnMenuGiamDinh.FlatAppearance.BorderSize = 0;
+        btnMenuGiamDinh.FlatStyle  = FlatStyle.Flat;
+        btnMenuGiamDinh.Font       = new Font("Segoe UI", 10F);
+        btnMenuGiamDinh.ForeColor  = Color.FromArgb(100, 110, 125);
+        btnMenuGiamDinh.Location   = new Point(560, 0);
+        btnMenuGiamDinh.Name       = "btnMenuGiamDinh";
+        btnMenuGiamDinh.Size       = new Size(200, 44);
+        btnMenuGiamDinh.TabIndex   = 3;
+        btnMenuGiamDinh.Text       = "Đối soát Giám định";
+        btnMenuGiamDinh.UseVisualStyleBackColor = false;
+        btnMenuGiamDinh.Click += btnMenuGiamDinh_Click;
+
         btnMenuThanhToan.BackColor = Color.White;
         btnMenuThanhToan.Cursor    = Cursors.Hand;
         btnMenuThanhToan.FlatAppearance.BorderSize = 0;
         btnMenuThanhToan.FlatStyle  = FlatStyle.Flat;
         btnMenuThanhToan.Font       = new Font("Segoe UI", 10F);
         btnMenuThanhToan.ForeColor  = Color.FromArgb(100, 110, 125);
-        btnMenuThanhToan.Location   = new Point(360, 0);
+        btnMenuThanhToan.Location   = new Point(760, 0);
         btnMenuThanhToan.Name       = "btnMenuThanhToan";
         btnMenuThanhToan.Size       = new Size(200, 44);
-        btnMenuThanhToan.TabIndex   = 2;
+        btnMenuThanhToan.TabIndex   = 4;
         btnMenuThanhToan.Text       = "Đối soát Thanh toán";
         btnMenuThanhToan.UseVisualStyleBackColor = false;
         btnMenuThanhToan.Click += btnMenuThanhToan_Click;
         //
         // pnlContent
         //
-        pnlContent.BackColor = Color.FromArgb(245, 247, 250);
+        pnlContent.BackColor = Color.FromArgb(250, 246, 242);
         pnlContent.Controls.Add(pnlDbConfig);
         pnlContent.Controls.Add(lblPlaceholder);
         pnlContent.Dock     = DockStyle.Fill;
@@ -694,7 +730,7 @@ partial class MainForm
         // 
         // MainForm
         // 
-        BackColor = Color.FromArgb(245, 247, 250);
+        BackColor = Color.FromArgb(250, 246, 242);
         ClientSize = new Size(1514, 861);
         Controls.Add(pnlContent);
         Controls.Add(pnlMenu);

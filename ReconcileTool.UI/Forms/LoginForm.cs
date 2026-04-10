@@ -1,5 +1,6 @@
 using ReconcileTool.UI.Config;
 using ReconcileTool.UI.Services;
+using static ReconcileTool.UI.Services.MongoAuthService;
 
 namespace ReconcileTool.UI.Forms;
 
@@ -38,26 +39,24 @@ public partial class LoginForm : Form
 
         try
         {
-            var accounts = await GoogleSheetService.GetAccountsByPlatformAsync(
-                AppConfig.GoogleSheetUrl,
-                AppConfig.Platform
-            );
+            var (result, userId, userName) = await MongoAuthService.LoginAsync(username, password);
 
-            bool isValid = accounts.Any(a =>
-                a.User.Equals(username, StringComparison.OrdinalIgnoreCase) &&
-                a.Password == password
-            );
-
-            if (isValid)
+            if (result == MongoAuthService.LoginResult.Success)
             {
+                var roles = await MongoAuthService.GetUserRolesAsync(userId);
                 this.Hide();
-                var mainForm = new MainForm();
+                var mainForm = new MainForm(roles, userName);
                 mainForm.FormClosed += (s, args) => this.Close();
                 mainForm.Show();
             }
+            else if (result == MongoAuthService.LoginResult.UserNotFound)
+            {
+                ShowError("Tài khoản không tồn tại.");
+                txtUsername.Focus();
+            }
             else
             {
-                ShowError("Tên đăng nhập hoặc mật khẩu không đúng.");
+                ShowError("Mật khẩu không đúng.");
                 txtPassword.Clear();
                 txtPassword.Focus();
             }

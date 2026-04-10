@@ -10,17 +10,11 @@ partial class BoiThuongControl
     private System.Windows.Forms.FlowLayoutPanel flpButtons;
 
     // Filter group containers (label + control pairs)
-    private System.Windows.Forms.Panel pnlF_Loai;
-    private System.Windows.Forms.Panel pnlF_TrangThai;
     private System.Windows.Forms.Panel pnlF_LocDB;
     private System.Windows.Forms.Panel pnlF_NgayDau;
     private System.Windows.Forms.Panel pnlF_NgayCuoi;
 
     // Filter controls
-    private System.Windows.Forms.Label lblLoai;
-    private System.Windows.Forms.ComboBox cboLoai;
-    private System.Windows.Forms.Label lblTrangThai;
-    private System.Windows.Forms.ComboBox cboTrangThai;
     private System.Windows.Forms.Label lblLocTrangThai;
     private System.Windows.Forms.ComboBox cboLocTrangThai;
     private System.Windows.Forms.Label lblNgayDau;
@@ -76,12 +70,6 @@ partial class BoiThuongControl
         btnKiemTra = new Button();
         btnSyncAll = new Button();
         flpControls = new FlowLayoutPanel();
-        pnlF_Loai = new Panel();
-        lblLoai = new Label();
-        cboLoai = new ComboBox();
-        pnlF_TrangThai = new Panel();
-        lblTrangThai = new Label();
-        cboTrangThai = new ComboBox();
         pnlF_LocDB = new Panel();
         lblLocTrangThai = new Label();
         cboLocTrangThai = new ComboBox();
@@ -115,8 +103,6 @@ partial class BoiThuongControl
         pnlFilter.SuspendLayout();
         flpButtons.SuspendLayout();
         flpControls.SuspendLayout();
-        pnlF_Loai.SuspendLayout();
-        pnlF_TrangThai.SuspendLayout();
         pnlF_LocDB.SuspendLayout();
         pnlF_NgayDau.SuspendLayout();
         pnlF_NgayCuoi.SuspendLayout();
@@ -157,7 +143,7 @@ partial class BoiThuongControl
         // 
         // btnKiemTra
         // 
-        btnKiemTra.BackColor = Color.FromArgb(24, 90, 157);
+        btnKiemTra.BackColor = Color.FromArgb(220, 95, 20);
         btnKiemTra.Cursor = Cursors.Hand;
         btnKiemTra.FlatAppearance.BorderSize = 0;
         btnKiemTra.FlatStyle = FlatStyle.Flat;
@@ -196,8 +182,6 @@ partial class BoiThuongControl
         flpControls.AutoSize     = true;
         flpControls.AutoSizeMode = AutoSizeMode.GrowAndShrink;
         flpControls.BackColor    = Color.White;
-        flpControls.Controls.Add(pnlF_Loai);
-        flpControls.Controls.Add(pnlF_TrangThai);
         flpControls.Controls.Add(pnlF_LocDB);
         flpControls.Controls.Add(pnlF_NgayDau);
         flpControls.Controls.Add(pnlF_NgayCuoi);
@@ -206,68 +190,6 @@ partial class BoiThuongControl
         flpControls.Name         = "flpControls";
         flpControls.Padding      = new Padding(10, 6, 10, 2);
         flpControls.WrapContents = true;
-        //
-        // pnlF_Loai
-        //
-        pnlF_Loai.BackColor = Color.Transparent;
-        pnlF_Loai.Controls.Add(lblLoai);
-        pnlF_Loai.Controls.Add(cboLoai);
-        pnlF_Loai.Margin  = new Padding(0, 0, 16, 0);
-        pnlF_Loai.Name    = "pnlF_Loai";
-        pnlF_Loai.Size    = new Size(170, 52);
-        pnlF_Loai.TabIndex = 0;
-        //
-        // lblLoai
-        //
-        lblLoai.AutoSize  = true;
-        lblLoai.Font      = new Font("Segoe UI", 8.5F);
-        lblLoai.ForeColor = Color.FromArgb(130, 140, 155);
-        lblLoai.Location  = new Point(0, 2);
-        lblLoai.Name      = "lblLoai";
-        lblLoai.TabIndex  = 0;
-        lblLoai.Text      = "Loại";
-        //
-        // cboLoai
-        //
-        cboLoai.DropDownStyle = ComboBoxStyle.DropDownList;
-        cboLoai.Font          = new Font("Segoe UI", 9.5F);
-        cboLoai.Items.AddRange(new object[] { "HS bồi thường", "HS giám định" });
-        cboLoai.Location      = new Point(0, 20);
-        cboLoai.Name          = "cboLoai";
-        cboLoai.SelectedIndex = 0;
-        cboLoai.Size          = new Size(170, 25);
-        cboLoai.TabIndex      = 1;
-        //
-        // pnlF_TrangThai
-        //
-        pnlF_TrangThai.BackColor = Color.Transparent;
-        pnlF_TrangThai.Controls.Add(lblTrangThai);
-        pnlF_TrangThai.Controls.Add(cboTrangThai);
-        pnlF_TrangThai.Margin  = new Padding(0, 0, 16, 0);
-        pnlF_TrangThai.Name    = "pnlF_TrangThai";
-        pnlF_TrangThai.Size    = new Size(175, 52);
-        pnlF_TrangThai.TabIndex = 1;
-        //
-        // lblTrangThai
-        //
-        lblTrangThai.AutoSize  = true;
-        lblTrangThai.Font      = new Font("Segoe UI", 8.5F);
-        lblTrangThai.ForeColor = Color.FromArgb(130, 140, 155);
-        lblTrangThai.Location  = new Point(0, 2);
-        lblTrangThai.Name      = "lblTrangThai";
-        lblTrangThai.TabIndex  = 0;
-        lblTrangThai.Text      = "Trạng thái";
-        //
-        // cboTrangThai
-        //
-        cboTrangThai.DropDownStyle = ComboBoxStyle.DropDownList;
-        cboTrangThai.Font          = new Font("Segoe UI", 9.5F);
-        cboTrangThai.Items.AddRange(new object[] { "Trạng thái Duyệt", "Tất cả" });
-        cboTrangThai.Location      = new Point(0, 20);
-        cboTrangThai.Name          = "cboTrangThai";
-        cboTrangThai.SelectedIndex = 0;
-        cboTrangThai.Size          = new Size(175, 25);
-        cboTrangThai.TabIndex      = 3;
         //
         // pnlF_LocDB
         //
@@ -366,7 +288,7 @@ partial class BoiThuongControl
         lblSoHs.AutoSize  = false;
         lblSoHs.Dock      = DockStyle.None;
         lblSoHs.Font      = new Font("Segoe UI", 9F, FontStyle.Bold);
-        lblSoHs.ForeColor = Color.FromArgb(24, 90, 157);
+        lblSoHs.ForeColor = Color.FromArgb(220, 95, 20);
         lblSoHs.Location  = new Point(10, 8);
         lblSoHs.Name      = "lblSoHs";
         lblSoHs.Size      = new Size(340, 20);
@@ -387,7 +309,7 @@ partial class BoiThuongControl
         // 
         // pnlStatus
         // 
-        pnlStatus.BackColor = Color.FromArgb(235, 241, 250);
+        pnlStatus.BackColor = Color.FromArgb(255, 242, 220);
         pnlStatus.Controls.Add(lblStatus);
         pnlStatus.Controls.Add(lblRecordCount);
         pnlStatus.Dock = DockStyle.Top;
@@ -411,7 +333,7 @@ partial class BoiThuongControl
         // 
         lblRecordCount.AutoSize = true;
         lblRecordCount.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-        lblRecordCount.ForeColor = Color.FromArgb(24, 90, 157);
+        lblRecordCount.ForeColor = Color.FromArgb(220, 95, 20);
         lblRecordCount.Location = new Point(650, 7);
         lblRecordCount.Name = "lblRecordCount";
         lblRecordCount.Size = new Size(0, 15);
@@ -440,7 +362,7 @@ partial class BoiThuongControl
         btnFirst.FlatAppearance.BorderColor = Color.FromArgb(200, 210, 225);
         btnFirst.FlatStyle = FlatStyle.Flat;
         btnFirst.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-        btnFirst.ForeColor = Color.FromArgb(24, 90, 157);
+        btnFirst.ForeColor = Color.FromArgb(220, 95, 20);
         btnFirst.Location = new Point(12, 8);
         btnFirst.Name = "btnFirst";
         btnFirst.Size = new Size(36, 26);
@@ -454,7 +376,7 @@ partial class BoiThuongControl
         btnPrev.FlatAppearance.BorderColor = Color.FromArgb(200, 210, 225);
         btnPrev.FlatStyle = FlatStyle.Flat;
         btnPrev.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-        btnPrev.ForeColor = Color.FromArgb(24, 90, 157);
+        btnPrev.ForeColor = Color.FromArgb(220, 95, 20);
         btnPrev.Location = new Point(52, 8);
         btnPrev.Name = "btnPrev";
         btnPrev.Size = new Size(36, 26);
@@ -478,7 +400,7 @@ partial class BoiThuongControl
         btnNext.FlatAppearance.BorderColor = Color.FromArgb(200, 210, 225);
         btnNext.FlatStyle = FlatStyle.Flat;
         btnNext.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-        btnNext.ForeColor = Color.FromArgb(24, 90, 157);
+        btnNext.ForeColor = Color.FromArgb(220, 95, 20);
         btnNext.Location = new Point(240, 8);
         btnNext.Name = "btnNext";
         btnNext.Size = new Size(36, 26);
@@ -492,7 +414,7 @@ partial class BoiThuongControl
         btnLast.FlatAppearance.BorderColor = Color.FromArgb(200, 210, 225);
         btnLast.FlatStyle = FlatStyle.Flat;
         btnLast.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-        btnLast.ForeColor = Color.FromArgb(24, 90, 157);
+        btnLast.ForeColor = Color.FromArgb(220, 95, 20);
         btnLast.Location = new Point(280, 8);
         btnLast.Name = "btnLast";
         btnLast.Size = new Size(36, 26);
@@ -547,16 +469,16 @@ partial class BoiThuongControl
         // 
         dgvResult.AllowUserToAddRows = false;
         dgvResult.AllowUserToDeleteRows = false;
-        dataGridViewCellStyle1.BackColor = Color.FromArgb(245, 249, 255);
+        dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 248, 235);
         dgvResult.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
         dgvResult.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         dgvResult.BackgroundColor = Color.White;
         dgvResult.BorderStyle = BorderStyle.None;
         dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 90, 157);
+        dataGridViewCellStyle2.BackColor = Color.FromArgb(220, 95, 20);
         dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
         dataGridViewCellStyle2.ForeColor = Color.White;
-        dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(24, 90, 157);
+        dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(220, 95, 20);
         dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
         dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
         dgvResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -626,7 +548,7 @@ partial class BoiThuongControl
         // 
         lblApiResponseHeader.Dock = DockStyle.Top;
         lblApiResponseHeader.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-        lblApiResponseHeader.ForeColor = Color.FromArgb(24, 90, 157);
+        lblApiResponseHeader.ForeColor = Color.FromArgb(220, 95, 20);
         lblApiResponseHeader.Location = new Point(8, 8);
         lblApiResponseHeader.Name = "lblApiResponseHeader";
         lblApiResponseHeader.Padding = new Padding(2, 0, 0, 0);
@@ -637,7 +559,7 @@ partial class BoiThuongControl
         // 
         // BoiThuongControl
         // 
-        BackColor = Color.FromArgb(245, 247, 250);
+        BackColor = Color.FromArgb(250, 246, 242);
         Controls.Add(pnlGrid);
         Controls.Add(pnlPaging);
         Controls.Add(pnlStatus);
@@ -648,10 +570,6 @@ partial class BoiThuongControl
         pnlFilter.PerformLayout();
         flpButtons.ResumeLayout(false);
         flpControls.ResumeLayout(false);
-        pnlF_Loai.ResumeLayout(false);
-        pnlF_Loai.PerformLayout();
-        pnlF_TrangThai.ResumeLayout(false);
-        pnlF_TrangThai.PerformLayout();
         pnlF_LocDB.ResumeLayout(false);
         pnlF_LocDB.PerformLayout();
         pnlF_NgayDau.ResumeLayout(false);

@@ -1,34 +1,28 @@
 namespace ReconcileTool.UI.Forms;
 
-partial class ThanhToanControl
+partial class GiamDinhControl
 {
     private System.ComponentModel.IContainer components = null;
 
-    // Filter panel
     private System.Windows.Forms.Panel pnlFilter;
     private System.Windows.Forms.FlowLayoutPanel flpControls;
     private System.Windows.Forms.FlowLayoutPanel flpButtons;
-    private System.Windows.Forms.Panel pnlF_Loai;
-    private System.Windows.Forms.Panel pnlF_TrangThai;
+    private System.Windows.Forms.Panel pnlF_LocDB;
     private System.Windows.Forms.Panel pnlF_NgayDau;
     private System.Windows.Forms.Panel pnlF_NgayCuoi;
-    private System.Windows.Forms.Label lblLoai;
-    private System.Windows.Forms.ComboBox cboLoai;
-    private System.Windows.Forms.Label lblTrangThai;
-    private System.Windows.Forms.ComboBox cboTrangThai;
+    private System.Windows.Forms.Label lblLocTrangThai;
+    private System.Windows.Forms.ComboBox cboLocTrangThai;
     private System.Windows.Forms.Label lblNgayDau;
     private System.Windows.Forms.DateTimePicker dtpNgayDau;
     private System.Windows.Forms.Label lblNgayCuoi;
     private System.Windows.Forms.DateTimePicker dtpNgayCuoi;
+    private System.Windows.Forms.Label lblSoHs;
+    private System.Windows.Forms.TextBox txtSoHs;
     private System.Windows.Forms.Button btnKiemTra;
     private System.Windows.Forms.Button btnSyncAll;
-
-    // Status bar
     private System.Windows.Forms.Panel pnlStatus;
     private System.Windows.Forms.Label lblStatus;
     private System.Windows.Forms.Label lblRecordCount;
-
-    // Paging panel
     private System.Windows.Forms.Panel pnlPaging;
     private System.Windows.Forms.Button btnFirst;
     private System.Windows.Forms.Button btnPrev;
@@ -38,14 +32,10 @@ partial class ThanhToanControl
     private System.Windows.Forms.Label lblPageSize;
     private System.Windows.Forms.ComboBox cboPageSize;
     private System.Windows.Forms.Label lblTotalRecords;
-
-    // Grid + right API-response panel
     private System.Windows.Forms.Panel pnlGrid;
-    private System.Windows.Forms.DataGridView dgvMain;
+    private System.Windows.Forms.DataGridView dgvResult;
     private System.Windows.Forms.Panel pnlApiResponse;
     private System.Windows.Forms.Panel pnlSoHsInput;
-    private System.Windows.Forms.Label lblSoHsInput;
-    private System.Windows.Forms.TextBox txtSoHs;
     private System.Windows.Forms.Panel pnlDivider;
     private System.Windows.Forms.Label lblApiResponseHeader;
     private System.Windows.Forms.RichTextBox rtxtApiResponse;
@@ -58,65 +48,59 @@ partial class ThanhToanControl
 
     private void InitializeComponent()
     {
-        DataGridViewCellStyle hdrStyle = new DataGridViewCellStyle();
-        DataGridViewCellStyle altStyle = new DataGridViewCellStyle();
-        DataGridViewCellStyle rowStyle = new DataGridViewCellStyle();
-
-        pnlFilter      = new Panel();
-        flpButtons     = new FlowLayoutPanel();
-        btnKiemTra     = new Button();
-        btnSyncAll     = new Button();
-        flpControls    = new FlowLayoutPanel();
-        pnlF_Loai      = new Panel();
-        lblLoai        = new Label();
-        cboLoai        = new ComboBox();
-        pnlF_TrangThai = new Panel();
-        lblTrangThai   = new Label();
-        cboTrangThai   = new ComboBox();
-        pnlF_NgayDau   = new Panel();
-        lblNgayDau     = new Label();
-        dtpNgayDau     = new DateTimePicker();
-        pnlF_NgayCuoi  = new Panel();
-        lblNgayCuoi    = new Label();
-        dtpNgayCuoi    = new DateTimePicker();
-        pnlStatus      = new Panel();
-        lblStatus      = new Label();
-        lblRecordCount = new Label();
-        pnlPaging      = new Panel();
-        btnFirst       = new Button();
-        btnPrev        = new Button();
-        lblPageInfo    = new Label();
-        btnNext        = new Button();
-        btnLast        = new Button();
-        lblPageSize    = new Label();
-        cboPageSize    = new ComboBox();
-        lblTotalRecords = new Label();
-        pnlGrid        = new Panel();
-        dgvMain        = new DataGridView();
-        pnlApiResponse = new Panel();
-        pnlSoHsInput   = new Panel();
-        lblSoHsInput   = new Label();
-        txtSoHs        = new TextBox();
-        pnlDivider     = new Panel();
+        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+        pnlFilter        = new Panel();
+        flpButtons       = new FlowLayoutPanel();
+        btnKiemTra       = new Button();
+        btnSyncAll       = new Button();
+        flpControls      = new FlowLayoutPanel();
+        pnlF_LocDB       = new Panel();
+        lblLocTrangThai  = new Label();
+        cboLocTrangThai  = new ComboBox();
+        pnlF_NgayDau     = new Panel();
+        lblNgayDau       = new Label();
+        dtpNgayDau       = new DateTimePicker();
+        pnlF_NgayCuoi    = new Panel();
+        lblNgayCuoi      = new Label();
+        dtpNgayCuoi      = new DateTimePicker();
+        lblSoHs          = new Label();
+        txtSoHs          = new TextBox();
+        pnlStatus        = new Panel();
+        lblStatus        = new Label();
+        lblRecordCount   = new Label();
+        pnlPaging        = new Panel();
+        btnFirst         = new Button();
+        btnPrev          = new Button();
+        lblPageInfo      = new Label();
+        btnNext          = new Button();
+        btnLast          = new Button();
+        lblPageSize      = new Label();
+        cboPageSize      = new ComboBox();
+        lblTotalRecords  = new Label();
+        pnlGrid          = new Panel();
+        dgvResult        = new DataGridView();
+        pnlApiResponse   = new Panel();
+        pnlSoHsInput     = new Panel();
+        pnlDivider       = new Panel();
+        rtxtApiResponse  = new RichTextBox();
         lblApiResponseHeader = new Label();
-        rtxtApiResponse = new RichTextBox();
 
         pnlFilter.SuspendLayout();
         flpButtons.SuspendLayout();
         flpControls.SuspendLayout();
-        pnlF_Loai.SuspendLayout();
-        pnlF_TrangThai.SuspendLayout();
+        pnlF_LocDB.SuspendLayout();
         pnlF_NgayDau.SuspendLayout();
         pnlF_NgayCuoi.SuspendLayout();
         pnlStatus.SuspendLayout();
         pnlPaging.SuspendLayout();
         pnlGrid.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)dgvResult).BeginInit();
         pnlSoHsInput.SuspendLayout();
         pnlApiResponse.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)dgvMain).BeginInit();
         SuspendLayout();
 
-        // ── pnlFilter ────────────────────────────────────────────────
         pnlFilter.AutoSize     = true;
         pnlFilter.AutoSizeMode = AutoSizeMode.GrowAndShrink;
         pnlFilter.BackColor    = Color.White;
@@ -128,7 +112,6 @@ partial class ThanhToanControl
         pnlFilter.Padding      = new Padding(6, 4, 6, 0);
         pnlFilter.TabIndex     = 3;
 
-        // ── flpButtons ───────────────────────────────────────────────
         flpButtons.BackColor    = Color.White;
         flpButtons.Controls.Add(btnKiemTra);
         flpButtons.Controls.Add(btnSyncAll);
@@ -139,7 +122,6 @@ partial class ThanhToanControl
         flpButtons.TabIndex     = 0;
         flpButtons.WrapContents = false;
 
-        // ── btnKiemTra ───────────────────────────────────────────────
         btnKiemTra.BackColor = Color.FromArgb(220, 95, 20);
         btnKiemTra.Cursor    = Cursors.Hand;
         btnKiemTra.FlatAppearance.BorderSize = 0;
@@ -156,7 +138,6 @@ partial class ThanhToanControl
         btnKiemTra.MouseEnter += btnKiemTra_MouseEnter;
         btnKiemTra.MouseLeave += btnKiemTra_MouseLeave;
 
-        // ── btnSyncAll ───────────────────────────────────────────────
         btnSyncAll.BackColor = Color.FromArgb(230, 245, 235);
         btnSyncAll.Cursor    = Cursors.Hand;
         btnSyncAll.FlatAppearance.BorderColor = Color.FromArgb(34, 139, 34);
@@ -171,12 +152,10 @@ partial class ThanhToanControl
         btnSyncAll.UseVisualStyleBackColor = false;
         btnSyncAll.Click += btnSyncAll_Click;
 
-        // ── flpControls ──────────────────────────────────────────────
         flpControls.AutoSize     = true;
         flpControls.AutoSizeMode = AutoSizeMode.GrowAndShrink;
         flpControls.BackColor    = Color.White;
-        flpControls.Controls.Add(pnlF_Loai);
-        flpControls.Controls.Add(pnlF_TrangThai);
+        flpControls.Controls.Add(pnlF_LocDB);
         flpControls.Controls.Add(pnlF_NgayDau);
         flpControls.Controls.Add(pnlF_NgayCuoi);
         flpControls.Dock         = DockStyle.Top;
@@ -184,66 +163,32 @@ partial class ThanhToanControl
         flpControls.Padding      = new Padding(10, 6, 10, 2);
         flpControls.WrapContents = true;
 
-        // ── pnlF_Loai ────────────────────────────────────────────────
-        pnlF_Loai.BackColor = Color.Transparent;
-        pnlF_Loai.Controls.Add(lblLoai);
-        pnlF_Loai.Controls.Add(cboLoai);
-        pnlF_Loai.Margin    = new Padding(0, 0, 16, 0);
-        pnlF_Loai.Name      = "pnlF_Loai";
-        pnlF_Loai.Size      = new Size(210, 52);
-        pnlF_Loai.TabIndex  = 0;
+        pnlF_LocDB.BackColor = Color.Transparent;
+        pnlF_LocDB.Controls.Add(lblLocTrangThai);
+        pnlF_LocDB.Controls.Add(cboLocTrangThai);
+        pnlF_LocDB.Margin   = new Padding(0, 0, 16, 0);
+        pnlF_LocDB.Name     = "pnlF_LocDB";
+        pnlF_LocDB.Size     = new Size(150, 52);
+        pnlF_LocDB.TabIndex = 0;
 
-        lblLoai.AutoSize  = true;
-        lblLoai.Font      = new Font("Segoe UI", 8.5F);
-        lblLoai.ForeColor = Color.FromArgb(130, 140, 155);
-        lblLoai.Location  = new Point(0, 2);
-        lblLoai.Name      = "lblLoai";
-        lblLoai.TabIndex  = 0;
-        lblLoai.Text      = "Loại";
+        lblLocTrangThai.AutoSize  = true;
+        lblLocTrangThai.Font      = new Font("Segoe UI", 8.5F);
+        lblLocTrangThai.ForeColor = Color.FromArgb(130, 140, 155);
+        lblLocTrangThai.Location  = new Point(0, 2);
+        lblLocTrangThai.Name      = "lblLocTrangThai";
+        lblLocTrangThai.TabIndex  = 0;
+        lblLocTrangThai.Text      = "Đồng bộ";
 
-        cboLoai.DropDownStyle = ComboBoxStyle.DropDownList;
-        cboLoai.Font          = new Font("Segoe UI", 9.5F);
-        cboLoai.Items.AddRange(new object[]
-        {
-            "Duyệt bồi thường",
-            "Duyệt giám định",
-            "Thanh toán bồi thường",
-            "Thanh toán giám định"
-        });
-        cboLoai.Location      = new Point(0, 20);
-        cboLoai.Name          = "cboLoai";
-        cboLoai.SelectedIndex = 0;
-        cboLoai.Size          = new Size(210, 25);
-        cboLoai.TabIndex      = 1;
+        cboLocTrangThai.DropDownStyle = ComboBoxStyle.DropDownList;
+        cboLocTrangThai.Font          = new Font("Segoe UI", 9.5F);
+        cboLocTrangThai.Items.AddRange(new object[] { "Toàn bộ", "Chưa đồng bộ" });
+        cboLocTrangThai.Location      = new Point(0, 20);
+        cboLocTrangThai.Name          = "cboLocTrangThai";
+        cboLocTrangThai.SelectedIndex = 0;
+        cboLocTrangThai.Size          = new Size(150, 25);
+        cboLocTrangThai.TabIndex      = 1;
+        cboLocTrangThai.SelectedIndexChanged += cboLocTrangThai_SelectedIndexChanged;
 
-        // ── pnlF_TrangThai ───────────────────────────────────────────
-        pnlF_TrangThai.BackColor = Color.Transparent;
-        pnlF_TrangThai.Controls.Add(lblTrangThai);
-        pnlF_TrangThai.Controls.Add(cboTrangThai);
-        pnlF_TrangThai.Margin    = new Padding(0, 0, 16, 0);
-        pnlF_TrangThai.Name      = "pnlF_TrangThai";
-        pnlF_TrangThai.Size      = new Size(150, 52);
-        pnlF_TrangThai.TabIndex  = 1;
-
-        lblTrangThai.AutoSize  = true;
-        lblTrangThai.Font      = new Font("Segoe UI", 8.5F);
-        lblTrangThai.ForeColor = Color.FromArgb(130, 140, 155);
-        lblTrangThai.Location  = new Point(0, 2);
-        lblTrangThai.Name      = "lblTrangThai";
-        lblTrangThai.TabIndex  = 0;
-        lblTrangThai.Text      = "Trạng thái";
-
-        cboTrangThai.DropDownStyle = ComboBoxStyle.DropDownList;
-        cboTrangThai.Font          = new Font("Segoe UI", 9.5F);
-        cboTrangThai.Items.AddRange(new object[] { "Tất cả", "Chưa đồng bộ" });
-        cboTrangThai.Location      = new Point(0, 20);
-        cboTrangThai.Name          = "cboTrangThai";
-        cboTrangThai.SelectedIndex = 0;
-        cboTrangThai.Size          = new Size(150, 25);
-        cboTrangThai.TabIndex      = 1;
-        cboTrangThai.SelectedIndexChanged += cboTrangThai_SelectedIndexChanged;
-
-        // ── pnlF_NgayDau ─────────────────────────────────────────────
         pnlF_NgayDau.BackColor = Color.Transparent;
         pnlF_NgayDau.Controls.Add(lblNgayDau);
         pnlF_NgayDau.Controls.Add(dtpNgayDau);
@@ -268,7 +213,6 @@ partial class ThanhToanControl
         dtpNgayDau.TabIndex = 3;
         dtpNgayDau.Value    = DateTime.Today;
 
-        // ── pnlF_NgayCuoi ────────────────────────────────────────────
         pnlF_NgayCuoi.BackColor = Color.Transparent;
         pnlF_NgayCuoi.Controls.Add(lblNgayCuoi);
         pnlF_NgayCuoi.Controls.Add(dtpNgayCuoi);
@@ -293,7 +237,24 @@ partial class ThanhToanControl
         dtpNgayCuoi.TabIndex = 5;
         dtpNgayCuoi.Value    = DateTime.Today;
 
-        // ── pnlStatus ────────────────────────────────────────────────
+        lblSoHs.AutoSize  = false;
+        lblSoHs.Font      = new Font("Segoe UI", 9F, FontStyle.Bold);
+        lblSoHs.ForeColor = Color.FromArgb(220, 95, 20);
+        lblSoHs.Location  = new Point(10, 8);
+        lblSoHs.Name      = "lblSoHs";
+        lblSoHs.Size      = new Size(340, 20);
+        lblSoHs.TabIndex  = 0;
+        lblSoHs.Text      = "📋  Nhập số hồ sơ";
+
+        txtSoHs.Font            = new Font("Segoe UI", 9.5F);
+        txtSoHs.Location        = new Point(10, 32);
+        txtSoHs.Multiline       = true;
+        txtSoHs.Name            = "txtSoHs";
+        txtSoHs.PlaceholderText = "Mỗi dòng một số HS:\nHS001\nHS002\nHS003";
+        txtSoHs.ScrollBars      = ScrollBars.Vertical;
+        txtSoHs.Size            = new Size(358, 118);
+        txtSoHs.TabIndex        = 1;
+
         pnlStatus.BackColor = Color.FromArgb(255, 242, 220);
         pnlStatus.Controls.Add(lblStatus);
         pnlStatus.Controls.Add(lblRecordCount);
@@ -317,7 +278,6 @@ partial class ThanhToanControl
         lblRecordCount.Name      = "lblRecordCount";
         lblRecordCount.TabIndex  = 1;
 
-        // ── pnlPaging ────────────────────────────────────────────────
         pnlPaging.BackColor = Color.White;
         pnlPaging.Controls.Add(btnFirst);
         pnlPaging.Controls.Add(btnPrev);
@@ -374,45 +334,41 @@ partial class ThanhToanControl
         lblTotalRecords.ForeColor = Color.FromArgb(100, 110, 125); lblTotalRecords.Location = new Point(470, 13);
         lblTotalRecords.Name      = "lblTotalRecords";
 
-        // ── pnlGrid ──────────────────────────────────────────────────
         pnlGrid.BackColor = Color.White;
-        pnlGrid.Controls.Add(dgvMain);
+        pnlGrid.Controls.Add(dgvResult);
         pnlGrid.Controls.Add(pnlApiResponse);
         pnlGrid.Dock      = DockStyle.Fill;
         pnlGrid.Name      = "pnlGrid";
         pnlGrid.TabIndex  = 0;
 
-        // ── dgvMain ──────────────────────────────────────────────────
-        altStyle.BackColor = Color.FromArgb(255, 248, 235);
-        dgvMain.AlternatingRowsDefaultCellStyle = altStyle;
-        dgvMain.AllowUserToAddRows    = false;
-        dgvMain.AllowUserToDeleteRows = false;
-        dgvMain.AutoGenerateColumns   = false;
-        dgvMain.AutoSizeColumnsMode   = DataGridViewAutoSizeColumnsMode.None;
-        dgvMain.BackgroundColor       = Color.White;
-        dgvMain.BorderStyle           = BorderStyle.None;
-        hdrStyle.Alignment            = DataGridViewContentAlignment.MiddleCenter;
-        hdrStyle.BackColor            = Color.FromArgb(220, 95, 20);
-        hdrStyle.Font                 = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-        hdrStyle.ForeColor            = Color.White;
-        hdrStyle.SelectionBackColor   = Color.FromArgb(220, 95, 20);
-        hdrStyle.SelectionForeColor   = SystemColors.HighlightText;
-        hdrStyle.WrapMode             = DataGridViewTriState.True;
-        dgvMain.ColumnHeadersDefaultCellStyle = hdrStyle;
-        dgvMain.ColumnHeadersHeightSizeMode   = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dgvMain.Dock                          = DockStyle.Fill;
-        dgvMain.EnableHeadersVisualStyles     = false;
-        dgvMain.Font                          = new Font("Segoe UI", 9.5F);
-        dgvMain.GridColor                     = Color.FromArgb(220, 225, 235);
-        dgvMain.Name                          = "dgvMain";
-        dgvMain.ReadOnly                      = true;
-        dgvMain.RowHeadersWidth               = 40;
-        rowStyle.BackColor                    = Color.White;
-        dgvMain.RowsDefaultCellStyle          = rowStyle;
-        dgvMain.SelectionMode                 = DataGridViewSelectionMode.FullRowSelect;
-        dgvMain.TabIndex                      = 0;
+        dgvResult.AllowUserToAddRows    = false;
+        dgvResult.AllowUserToDeleteRows = false;
+        dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 248, 235);
+        dgvResult.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+        dgvResult.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        dgvResult.BackgroundColor     = Color.White;
+        dgvResult.BorderStyle         = BorderStyle.None;
+        dataGridViewCellStyle2.Alignment        = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle2.BackColor        = Color.FromArgb(220, 95, 20);
+        dataGridViewCellStyle2.Font             = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+        dataGridViewCellStyle2.ForeColor        = Color.White;
+        dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(220, 95, 20);
+        dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle2.WrapMode         = DataGridViewTriState.True;
+        dgvResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+        dgvResult.ColumnHeadersHeightSizeMode   = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvResult.Dock                          = DockStyle.Fill;
+        dgvResult.EnableHeadersVisualStyles     = false;
+        dgvResult.Font                          = new Font("Segoe UI", 9.5F);
+        dgvResult.GridColor                     = Color.FromArgb(220, 225, 235);
+        dgvResult.Name                          = "dgvResult";
+        dgvResult.ReadOnly                      = true;
+        dgvResult.RowHeadersWidth               = 40;
+        dataGridViewCellStyle3.BackColor        = Color.White;
+        dgvResult.RowsDefaultCellStyle          = dataGridViewCellStyle3;
+        dgvResult.SelectionMode                 = DataGridViewSelectionMode.FullRowSelect;
+        dgvResult.TabIndex                      = 0;
 
-        // ── pnlApiResponse (right panel) ─────────────────────────────
         pnlApiResponse.BackColor = Color.FromArgb(248, 250, 253);
         pnlApiResponse.Controls.Add(rtxtApiResponse);
         pnlApiResponse.Controls.Add(lblApiResponseHeader);
@@ -424,52 +380,30 @@ partial class ThanhToanControl
         pnlApiResponse.Width    = 380;
         pnlApiResponse.TabIndex = 1;
 
-        // ── pnlSoHsInput ─────────────────────────────────────────────
         pnlSoHsInput.BackColor = Color.FromArgb(240, 244, 252);
-        pnlSoHsInput.Controls.Add(lblSoHsInput);
+        pnlSoHsInput.Controls.Add(lblSoHs);
         pnlSoHsInput.Controls.Add(txtSoHs);
-        pnlSoHsInput.Dock      = DockStyle.Top;
-        pnlSoHsInput.Name      = "pnlSoHsInput";
-        pnlSoHsInput.Size      = new Size(380, 120);
-        pnlSoHsInput.TabIndex  = 3;
+        pnlSoHsInput.Dock    = DockStyle.Top;
+        pnlSoHsInput.Name    = "pnlSoHsInput";
+        pnlSoHsInput.Size    = new Size(380, 165);
+        pnlSoHsInput.TabIndex = 3;
 
-        lblSoHsInput.AutoSize  = false;
-        lblSoHsInput.Font      = new Font("Segoe UI", 9F, FontStyle.Bold);
-        lblSoHsInput.ForeColor = Color.FromArgb(220, 95, 20);
-        lblSoHsInput.Location  = new Point(8, 6);
-        lblSoHsInput.Name      = "lblSoHsInput";
-        lblSoHsInput.Size      = new Size(360, 20);
-        lblSoHsInput.TabIndex  = 0;
-        lblSoHsInput.Text      = "Nhập số hồ sơ";
-
-        txtSoHs.Font            = new Font("Segoe UI", 9.5F);
-        txtSoHs.Location        = new Point(8, 28);
-        txtSoHs.Multiline       = true;
-        txtSoHs.Name            = "txtSoHs";
-        txtSoHs.PlaceholderText = "Mỗi dòng một số HS:\nHS001\nHS002";
-        txtSoHs.ScrollBars      = ScrollBars.Vertical;
-        txtSoHs.Size            = new Size(362, 84);
-        txtSoHs.TabIndex        = 1;
-
-        // ── pnlDivider ───────────────────────────────────────────────
-        pnlDivider.BackColor = Color.FromArgb(220, 225, 235);
+        pnlDivider.BackColor = Color.FromArgb(200, 210, 225);
         pnlDivider.Dock      = DockStyle.Top;
         pnlDivider.Height    = 1;
         pnlDivider.Name      = "pnlDivider";
         pnlDivider.TabIndex  = 2;
 
-        // ── lblApiResponseHeader ─────────────────────────────────────
         lblApiResponseHeader.Dock      = DockStyle.Top;
         lblApiResponseHeader.Font      = new Font("Segoe UI", 9.5F, FontStyle.Bold);
         lblApiResponseHeader.ForeColor = Color.FromArgb(220, 95, 20);
         lblApiResponseHeader.Name      = "lblApiResponseHeader";
         lblApiResponseHeader.Padding   = new Padding(8, 0, 0, 0);
-        lblApiResponseHeader.Size      = new Size(380, 30);
+        lblApiResponseHeader.Size      = new Size(380, 32);
         lblApiResponseHeader.TabIndex  = 1;
-        lblApiResponseHeader.Text      = "Kết quả API";
+        lblApiResponseHeader.Text      = "📋  Kết quả gọi API";
         lblApiResponseHeader.TextAlign = ContentAlignment.MiddleLeft;
 
-        // ── rtxtApiResponse ──────────────────────────────────────────
         rtxtApiResponse.BackColor   = Color.FromArgb(248, 250, 253);
         rtxtApiResponse.BorderStyle = BorderStyle.None;
         rtxtApiResponse.Dock        = DockStyle.Fill;
@@ -481,23 +415,20 @@ partial class ThanhToanControl
         rtxtApiResponse.TabIndex    = 0;
         rtxtApiResponse.Text        = "Nhấn \"Đồng bộ lại\" để xem kết quả tại đây.";
 
-        // ── ThanhToanControl ─────────────────────────────────────────
         BackColor = Color.FromArgb(250, 246, 242);
         Controls.Add(pnlGrid);
         Controls.Add(pnlPaging);
         Controls.Add(pnlStatus);
         Controls.Add(pnlFilter);
-        Name = "ThanhToanControl";
+        Name = "GiamDinhControl";
         Size = new Size(1766, 700);
 
         pnlFilter.ResumeLayout(false);
         pnlFilter.PerformLayout();
         flpButtons.ResumeLayout(false);
         flpControls.ResumeLayout(false);
-        pnlF_Loai.ResumeLayout(false);
-        pnlF_Loai.PerformLayout();
-        pnlF_TrangThai.ResumeLayout(false);
-        pnlF_TrangThai.PerformLayout();
+        pnlF_LocDB.ResumeLayout(false);
+        pnlF_LocDB.PerformLayout();
         pnlF_NgayDau.ResumeLayout(false);
         pnlF_NgayDau.PerformLayout();
         pnlF_NgayCuoi.ResumeLayout(false);
@@ -507,10 +438,10 @@ partial class ThanhToanControl
         pnlPaging.ResumeLayout(false);
         pnlPaging.PerformLayout();
         pnlGrid.ResumeLayout(false);
+        ((System.ComponentModel.ISupportInitialize)dgvResult).EndInit();
         pnlSoHsInput.ResumeLayout(false);
         pnlSoHsInput.PerformLayout();
         pnlApiResponse.ResumeLayout(false);
-        ((System.ComponentModel.ISupportInitialize)dgvMain).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }

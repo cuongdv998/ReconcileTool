@@ -85,9 +85,9 @@ public partial class BoiThuongControl : UserControl
     // Button hover
     // ─────────────────────────────────────────────────────────────────
     private void btnKiemTra_MouseEnter(object? sender, EventArgs e)
-        => btnKiemTra.BackColor = System.Drawing.Color.FromArgb(18, 70, 130);
+        => btnKiemTra.BackColor = System.Drawing.Color.FromArgb(175, 65, 10);
     private void btnKiemTra_MouseLeave(object? sender, EventArgs e)
-        => btnKiemTra.BackColor = System.Drawing.Color.FromArgb(24, 90, 157);
+        => btnKiemTra.BackColor = System.Drawing.Color.FromArgb(220, 95, 20);
 
     private void cboLocTrangThai_SelectedIndexChanged(object? sender, EventArgs e)
     {
@@ -125,15 +125,7 @@ public partial class BoiThuongControl : UserControl
             return;
         }
 
-        if (cboLoai.SelectedItem?.ToString() == "HS giám định"
-         || cboTrangThai.SelectedItem?.ToString() == "Tất cả")
-        {
-            MessageBox.Show("Chức năng đang phát triển.",
-                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            return;
-        }
-
-        string bTtrang = "D";
+        const string bTtrang = "D";
 
         // DT_BSH.PBH_DSOAT_CORE_HSBT    → DB MYBSH (10.86.0.87)      isBsh: false
         // CUONGDV.PBH_DSOAT_MYBSH_HSBT  → DB BSH   (115.146.126.94)  isBsh: true
@@ -174,8 +166,7 @@ public partial class BoiThuongControl : UserControl
                                       .ToDictionary(g => g.Key, g => g.Count());
 
             lblStatus.ForeColor = System.Drawing.Color.FromArgb(34, 139, 34);
-            lblStatus.Text = $"✔  Tải xong lúc {DateTime.Now:HH:mm:ss}  |  " +
-                             $"{cboLoai.SelectedItem}  |  {cboTrangThai.SelectedItem}  |  " +
+            lblStatus.Text = $"✔  Tải xong lúc {DateTime.Now:HH:mm:ss}  |  HS Bồi thường  |  " +
                              $"{dtpNgayDau.Value:dd/MM/yyyy} → {dtpNgayCuoi.Value:dd/MM/yyyy}  |  " +
                              $"MYBSH: {coreData.Rows.Count:N0}   BSH: {bshData.Rows.Count:N0}";
 
@@ -475,7 +466,7 @@ public partial class BoiThuongControl : UserControl
             AutoSizeMode = DataGridViewAutoSizeColumnMode.None,
             FlatStyle  = FlatStyle.Flat,
         };
-        actionCol.DefaultCellStyle.BackColor  = System.Drawing.Color.FromArgb(24, 90, 157);
+        actionCol.DefaultCellStyle.BackColor  = System.Drawing.Color.FromArgb(220, 95, 20);
         actionCol.DefaultCellStyle.ForeColor  = System.Drawing.Color.White;
         actionCol.DefaultCellStyle.Font       = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
         actionCol.DefaultCellStyle.Alignment  = DataGridViewContentAlignment.MiddleCenter;
@@ -799,6 +790,22 @@ public partial class BoiThuongControl : UserControl
         {
             return json;
         }
+    }
+
+    // ─────────────────────────────────────────────────────────────────
+    // Clear data khi chuyển tab
+    // ─────────────────────────────────────────────────────────────────
+    public void ClearData()
+    {
+        _fullData        = new DataTable();
+        _currentPage     = 1;
+        dgvResult.DataSource = null;
+        dgvResult.Columns.Clear();
+        lblStatus.ForeColor  = System.Drawing.Color.FromArgb(100, 110, 125);
+        lblStatus.Text       = "Chọn điều kiện và nhấn \"Kiểm tra\" để tải dữ liệu.";
+        lblRecordCount.Text  = "";
+        rtxtApiResponse.Text = "";
+        UpdatePagingControls();
     }
 
     // ─────────────────────────────────────────────────────────────────
